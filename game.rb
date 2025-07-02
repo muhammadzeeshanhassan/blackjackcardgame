@@ -17,9 +17,9 @@ end
 
 class Deck
     attr_reader :cards;
-    def initialize()
+    def initialize
         @cards = []
-        build_deck()
+        build_deck
         shuffle!
     end
 
@@ -56,7 +56,7 @@ end
 class Hand
   attr_reader :cards
 
-  def initialize()
+  def initialize
     @cards = []
   end
 
@@ -80,7 +80,7 @@ class Hand
     end
   end
 
-  def total()
+  def total
     sum = 0
     aces = 0
 
@@ -104,7 +104,7 @@ class Hand
     sum
   end
 
-  def busted?()
+  def busted?
     total > 21
   end
 end
@@ -132,11 +132,11 @@ class Participant
         puts "#{name}'s total: #{hand.total}" unless hidden
     end
 
-    def busted?()
+    def busted?
         hand.busted?
     end
 
-    def total()
+    def total
         hand.total
     end
 end
@@ -188,7 +188,7 @@ class Game
   end
 
   def start
-    puts "🎮 Welcome to Blackjack!"
+    puts "Welcome to Blackjack!"
     deal_initial_cards
     show_initial_hands
     player_turn
@@ -261,4 +261,4 @@ class Game
 end
 
 game = Game.new
-game.start()
+game.start
