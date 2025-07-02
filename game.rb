@@ -24,7 +24,7 @@ class Deck
     end
 
     def build_deck()
-        suits = ['♠', '♥', '♦', '♣']
+        suits = ["\u2660", "\u2665", "\u2666", "\u2663"]
         values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
         suits.each { |s|
@@ -158,7 +158,7 @@ class Dealer < Participant
     while total < 17
       puts "Dealer hits..."
       add_card(deck.deal)
-      sleep(1)  
+    #   sleep(1)  
       show_hand(true)  
     end
     puts "Dealer stands." if total >= 17
